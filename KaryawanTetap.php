@@ -16,17 +16,8 @@ class KaryawanTetap extends Karyawan {
 
     // Implementasi abstract method hitungGajiBersih()
     public function hitungGajiBersih() {
-        // Gaji bersih = gaji dasar per hari * jumlah hari kerja + tunjangan kesehatan
-        $hariKerjaBulan = 22;
-        $gajiTetap = $this->gajiDasarPerHari * $hariKerjaBulan;
-        
-        // Tambahan tunjangan kesehatan
-        $gajiDenganTunjangan = $gajiTetap + $this->tunjanganKesehatan;
-        
-        // Potongan pajak untuk karyawan tetap (misal 10%)
-        $pajakTetap = $gajiDenganTunjangan * 0.10;
-        
-        $gajiBersih = $gajiDenganTunjangan - $pajakTetap;
+        // Gaji bersih = hariKerjaMasuk * gajiDasarPerHari + tunjanganKesehatan
+        $gajiBersih = ($this->hariKerjaMasuk * $this->gajiDasarPerHari) + $this->tunjanganKesehatan;
         return $gajiBersih;
     }
 

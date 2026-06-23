@@ -16,14 +16,8 @@ class KaryawanKontrak extends Karyawan {
 
     // Implementasi abstract method hitungGajiBersih()
     public function hitungGajiBersih() {
-        // Gaji bersih = gaji dasar per hari * jumlah hari kerja (contoh: 22 hari kerja per bulan)
-        $hariKerjaBulan = 22;
-        $gajiKontrak = $this->gajiDasarPerHari * $hariKerjaBulan;
-        
-        // Potongan pajak untuk karyawan kontrak (misal 5%)
-        $pajakKontrak = $gajiKontrak * 0.05;
-        
-        $gajiBersih = $gajiKontrak - $pajakKontrak;
+        // Gaji bersih = hariKerjaMasuk * gajiDasarPerHari
+        $gajiBersih = $this->hariKerjaMasuk * $this->gajiDasarPerHari;
         return $gajiBersih;
     }
 

@@ -16,12 +16,9 @@ class KaryawanMagang extends Karyawan {
 
     // Implementasi abstract method hitungGajiBersih()
     public function hitungGajiBersih() {
-        // Gaji bersih = gaji dasar per hari * jumlah hari kerja + uang saku bulanan
-        $hariKerjaBulan = 22;
-        $gajiBersihMagang = $this->gajiDasarPerHari * $hariKerjaBulan + $this->uangSakuBulanan;
-        
-        // Karyawan magang tidak memiliki potongan pajak
-        return $gajiBersihMagang;
+        // Gaji bersih = (hariKerjaMasuk * gajiDasarPerHari) * 0.80
+        $gajiBersih = ($this->hariKerjaMasuk * $this->gajiDasarPerHari) * 0.80;
+        return $gajiBersih;
     }
 
     // Implementasi abstract method tampilkanProfilKaryawan()
