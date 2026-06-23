@@ -11,7 +11,7 @@ $karyawanTetap = [];
 $karyawanMagang = [];
 
 // Query untuk Karyawan Kontrak
-$queryKontrak = "SELECT * FROM karyawan WHERE status_ketenagakerjaan = 'Kontrak'";
+$queryKontrak = "SELECT * FROM tabel_karyawan WHERE jenis_karyawan = 'kontrak'";
 $resultKontrak = $koneksi->query($queryKontrak);
 
 if ($resultKontrak && $resultKontrak->num_rows > 0) {
@@ -29,7 +29,7 @@ if ($resultKontrak && $resultKontrak->num_rows > 0) {
 }
 
 // Query untuk Karyawan Tetap
-$queryTetap = "SELECT * FROM karyawan WHERE status_ketenagakerjaan = 'Tetap'";
+$queryTetap = "SELECT * FROM tabel_karyawan WHERE jenis_karyawan = 'tetap'";
 $resultTetap = $koneksi->query($queryTetap);
 
 if ($resultTetap && $resultTetap->num_rows > 0) {
@@ -47,7 +47,7 @@ if ($resultTetap && $resultTetap->num_rows > 0) {
 }
 
 // Query untuk Karyawan Magang
-$queryMagang = "SELECT * FROM karyawan WHERE status_ketenagakerjaan = 'Magang'";
+$queryMagang = "SELECT * FROM tabel_karyawan WHERE jenis_karyawan = 'magang'";
 $resultMagang = $koneksi->query($queryMagang);
 
 if ($resultMagang && $resultMagang->num_rows > 0) {
